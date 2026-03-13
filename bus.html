@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pasindu Transport Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<img src="logo.webp" class="header-logo" alt="Pasindu Transport Logo">
+<h1>Pasindu Transport Service</h1>
+<p>Safe • Comfortable • Reliable Bus Transport</p>
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#fleet">Our Fleet</a>
+<a href="#routes">Routes</a>
+<a href="#booking">Booking</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+Pasindu Transport Service 🚍
+</div>
+
+<div class="container" id="services">
+
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+<div class="card-content">
+<h3>Route Seat Booking</h3>
+<p>Book seats for daily bus routes easily.</p>
+<button class="book-btn" id="openBookingModal">Book Now</button>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>Bus Hire</h3>
+<p>Hire buses for weddings, school trips, company tours and private travel.</p>
+<a href="#fleet"><button class="book-btn">Choose Bus</button></a>
+<button class="book-btn" onclick="openTripModal()" style="margin-top: 10px;">General Trip Booking</button>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>Photoshoot Bus Hire</h3>
+<p>Modified buses available for photoshoots and videos.</p>
+<button class="book-btn" onclick="openPhotoshootModal()">Book for Shoot</button>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="container" id="fleet">
+<h2>Our Fleet</h2>
+<div class="services">
+
+<div class="card bus-card">
+<img src="bus1.jpg" class="bus-photo" alt="Royal Express">
+<div class="card-content">
+<h3>Royal Express</h3>
+<p>Modified luxury bus with premium sound & lighting.</p>
+<button class="hire-btn" onclick="openHireModal('Royal Express')">Hire This Bus</button>
+<a href="modify.html" target="_blank" style="text-decoration: none;"><button class="modify-btn" style="width: 100%; margin-top: 10px;">Modify Bus</button></a>
+</div>
+</div>
+
+<div class="card bus-card">
+<img src="bus2.jpg" class="bus-photo" alt="Silver Wing">
+<div class="card-content">
+<h3>Silver Wing</h3>
+<p>Standard semi-luxury bus for reliable group travel.</p>
+<button class="hire-btn" onclick="openHireModal('Silver Wing')">Hire This Bus</button>
+<a href="modify.html" target="_blank" style="text-decoration: none;"><button class="modify-btn" style="width: 100%; margin-top: 10px;">Modify Bus</button></a>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="container routes" id="routes">
+    <h2>Premier Routes</h2>
+    <div class="card" style="max-width: 800px; margin: auto;">
+        <div class="card-content">
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; justify-content: space-between;">
+                    <strong>120</strong> <span>Horana ↔ Colombo</span>
+                </li>
+                <li style="padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; justify-content: space-between;">
+                    <strong>127</strong> <span>Moragahahena ↔ Piliyandala</span>
+                </li>
+                <li style="padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; justify-content: space-between;">
+                    <strong>128</strong> <span>Thalagala ↔ Kottawa</span>
+                </li>
+            </ul>
+            <p style="text-align:center; margin-top: 30px; font-style: italic; color: var(--text-muted);">
+                We operate 20 buses including modified and original luxury coaches.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="contact">
+    <div class="container">
+        <h2>Inquiries & Support</h2>
+        <div style="text-align:center; margin-bottom: 50px;">
+            <p style="font-size: 1.2rem; margin-bottom: 10px; color: var(--accent);">Owner: Pasindu Lakshan</p>
+            <p style="font-size: 1.5rem; font-weight: 700;">07825646984</p>
+            <p style="opacity: 0.6; margin-top: 10px;">Service Area: Horana – Colombo – Piliyandala – Kottawa</p>
+        </div>
+        <div class="contact-buttons">
+            <a href="tel:07825646984" class="contact-btn call-btn">📞 Call Us</a>
+            <a href="https://wa.me/947825646984" class="contact-btn whatsapp-btn">💬 WhatsApp</a>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="booking">
+    <h2>Special Requests</h2>
+    <form id="generalInquiryForm">
+        <label>Name</label>
+        <input type="text" placeholder="Your Name" required>
+
+        <label>Phone</label>
+        <input type="tel" placeholder="Phone Number" required>
+
+        <label>Service Type</label>
+        <select>
+            <option>Route Seat Booking</option>
+            <option>Bus Hire / Trip</option>
+            <option>Photoshoot Bus</option>
+        </select>
+
+        <label>Proposed Date</label>
+        <input type="date">
+
+        <label>Specific Details</label>
+        <textarea placeholder="Tell us more about your requirements..."></textarea>
+
+        <button type="submit" class="book-btn" style="width: 100%;">Submit Inquiry</button>
+    </form>
+</div>
+
+<footer>
+© 2026 Pasindu Transport Service
+</footer>
+
+<!-- Modals -->
+
+<!-- Trip Transport Modal -->
+<div id="tripModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeTripModal()">&times;</span>
+        <h2>School & Company Trips</h2>
+        <form id="tripBookingForm">
+            <label>Organization / Company Name</label>
+            <input type="text" placeholder="e.g. Royal College / Google" required>
+
+            <label>Number of Buses Needed</label>
+            <input type="number" min="1" placeholder="e.g. 2" required>
+
+            <label>Destination</label>
+            <input type="text" placeholder="e.g. Galle" required>
+
+            <label>Trip Date</label>
+            <input type="date" required>
+
+            <button type="submit" style="margin-top: 20px;">Request Trip Quote</button>
+        </form>
+    </div>
+</div>
+
+<!-- Photoshoot Modal -->
+<div id="photoshootModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closePhotoshootModal()">&times;</span>
+        <h2>Photoshoot Bus Booking</h2>
+        <form id="photoshootForm">
+            <label>Location of Shoot</label>
+            <input type="text" placeholder="e.g. Viharamahadevi Park" required>
+
+            <label>Duration (Hours)</label>
+            <input type="number" min="1" placeholder="e.g. 4" required>
+
+            <label>Shoot Type</label>
+            <select required>
+                <option>Music Video</option>
+                <option>Pre-wedding Shoot</option>
+                <option>Commercial/Ad</option>
+                <option>Other</option>
+            </select>
+
+            <label>Preferred Date</label>
+            <input type="date" required>
+
+            <button type="submit" style="margin-top: 20px;">Check Availability</button>
+        </form>
+    </div>
+</div>
+
+<!-- Hire Modal -->
+<div id="hireModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeHireModal()">&times;</span>
+        <h2 id="hireBusTitle">Hire Bus</h2>
+        <form id="busHireForm">
+            <input type="hidden" id="selectedBusName">
+            
+            <label>Full Name</label>
+            <input type="text" placeholder="Your Name" required>
+
+            <label>Tour Start Point</label>
+            <input type="text" placeholder="e.g. Horana" required>
+
+            <label>Tour Places (Visiting)</label>
+            <input type="text" placeholder="e.g. Kandy, Nuwara Eliya" required>
+
+            <label>Tour End Place</label>
+            <input type="text" placeholder="e.g. Colombo" required>
+
+            <label>Tour Days</label>
+            <input type="number" min="1" placeholder="Number of days" required>
+
+            <label>Number of Participants</label>
+            <input type="number" min="1" placeholder="e.g. 40" required>
+
+            <label>Starting Date</label>
+            <input type="date" required>
+
+            <button type="submit" style="margin-top: 20px;">Send Hire Request</button>
+        </form>
+    </div>
+</div>
+
+<!-- Booking Modal -->
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeBookingModal()">&times;</span>
+        <h2>Reserve Your Seat</h2>
+        <form id="seatBookingForm">
+            <label>Route</label>
+            <select required>
+                <option value="" disabled selected>Select Route</option>
+                <option>120 – Horana ↔ Colombo</option>
+                <option>127 – Moragahahena ↔ Piliyandala</option>
+                <option>128 – Thalagala ↔ Kottawa</option>
+            </select>
+
+            <label>Number of Seats</label>
+            <input type="number" min="1" max="50" placeholder="e.g. 2" required>
+
+            <label>Bus Type</label>
+            <select required>
+                <option>Normal</option>
+                <option>Semi-Luxury</option>
+                <option>Luxury</option>
+            </select>
+
+            <label>Preferred Time</label>
+            <input type="time" required>
+
+            <button type="submit" style="margin-top: 20px;">Confirm Booking</button>
+        </form>
+    </div>
+</div>
+
+<!-- Success Notification Modal -->
+<div id="successModal" class="modal">
+    <div class="modal-content">
+        <span class="success-icon">😊</span>
+        <h2 class="success-title">Booking Confirmed!</h2>
+        <p class="success-message">Thank you for joining with us. Make your journey happy and safely.</p>
+        <button class="success-btn" onclick="closeSuccessModal()">Great, Thank You!</button>
+    </div>
+</div>
+
+<script>
+// Modal Elements
+const modal = document.getElementById("bookingModal");
+const hireModal = document.getElementById("hireModal");
+const tripModal = document.getElementById("tripModal");
+const photoshootModal = document.getElementById("photoshootModal");
+const successModal = document.getElementById("successModal");
+
+const openBookingBtn = document.getElementById("openBookingModal");
+
+// Open functions
+if (openBookingBtn) {
+    openBookingBtn.onclick = function() {
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+    }
+}
+
+function openTripModal() {
+    tripModal.style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+
+function openPhotoshootModal() {
+    photoshootModal.style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+
+function openHireModal(busName) {
+    document.getElementById('hireBusTitle').innerText = "Hire " + busName;
+    document.getElementById('selectedBusName').value = busName;
+    hireModal.style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+
+// Close functions
+function closeBookingModal() {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+function closeTripModal() {
+    tripModal.style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+function closePhotoshootModal() {
+    photoshootModal.style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+function closeHireModal() {
+    hireModal.style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+function closeSuccessModal() {
+    successModal.style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+function showSuccess() {
+    // Hide all input modals
+    modal.style.display = "none";
+    hireModal.style.display = "none";
+    tripModal.style.display = "none";
+    photoshootModal.style.display = "none";
+    
+    // Clear the general inquiry form if it exists
+    const inquiryForm = document.getElementById("generalInquiryForm");
+    if(inquiryForm) inquiryForm.reset();
+
+    // Show success modal
+    successModal.style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+
+// Window click to close
+window.onclick = function(event) {
+    if (event.target == modal) closeBookingModal();
+    if (event.target == hireModal) closeHireModal();
+    if (event.target == tripModal) closeTripModal();
+    if (event.target == photoshootModal) closePhotoshootModal();
+    if (event.target == successModal) closeSuccessModal();
+}
+
+// Form Submissions
+const bookingForm = document.getElementById('seatBookingForm');
+if (bookingForm) {
+    bookingForm.onsubmit = function(e) {
+        e.preventDefault();
+        showSuccess();
+    }
+}
+
+const hireForm = document.getElementById('busHireForm');
+if (hireForm) {
+    hireForm.onsubmit = function(e) {
+        e.preventDefault();
+        showSuccess();
+    }
+}
+
+const tripForm = document.getElementById('tripBookingForm');
+if (tripForm) {
+    tripForm.onsubmit = function(e) {
+        e.preventDefault();
+        showSuccess();
+    }
+}
+
+const photoshootForm = document.getElementById('photoshootForm');
+if (photoshootForm) {
+    photoshootForm.onsubmit = function(e) {
+        e.preventDefault();
+        showSuccess();
+    }
+}
+
+const generalForm = document.getElementById('generalInquiryForm');
+if (generalForm) {
+    generalForm.onsubmit = function(e) {
+        e.preventDefault();
+        showSuccess();
+    }
+}
+
+// Close buttons inside modals (the X) - specific for each to avoid conflicts
+</script>
+
+</body>
+</html>

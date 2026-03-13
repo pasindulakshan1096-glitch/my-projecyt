@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Bus - Pasindu Transport</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .modify-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .option-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .option-item {
+            padding: 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .option-item:hover {
+            border-color: var(--accent-color);
+            background: #fffdf5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Modify Your Bus</h1>
+        <p>Customize for your special occasion</p>
+    </header>
+
+    <div class="container">
+        <div class="modify-container">
+            <h2>Select Modifications</h2>
+            <div class="option-grid">
+                <div class="option-item">
+                    <h3>Interior Lighting</h3>
+                    <p>RGB LED strips and ambient lighting.</p>
+                </div>
+                <div class="option-item">
+                    <h3>Sound System</h3>
+                    <p>Upgrade to high-fidelity surround sound.</p>
+                </div>
+                <div class="option-item">
+                    <h3>Seating Layout</h3>
+                    <p>Adjust for more legroom or dance floor.</p>
+                </div>
+                <div class="option-item">
+                    <h3>Exterior Wrap</h3>
+                    <p>Custom branding for photoshoots.</p>
+                </div>
+            </div>
+            <button class="modify-btn" style="width: 100%; margin-top: 40px;" onclick="alert('Configuration saved!')">Save Configuration</button>
+        </div>
+    </div>
+</body>
+</html>
